@@ -8,8 +8,19 @@ class Square():
 
     
     def __init__(self, *args, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        if args:
+            try:
+                self.width, self.height = args
+            except:
+                raise ValueError
+            else:
+                try:
+                    self.width = kwargs.get("width")
+                    self.height = kwargs.get("height")
+                except:
+                    raise ValueError
+            if self.width != self.height:
+                raise ValueError
 
     def area_of_my_square(self):
         """ Area of the square """
