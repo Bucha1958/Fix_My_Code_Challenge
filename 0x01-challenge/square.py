@@ -13,12 +13,12 @@ class Square():
                 self.width, self.height = args
             except:
                 raise ValueError
-            else:
-                try:
-                    self.width = kwargs.get("width")
-                    self.height = kwargs.get("height")
-                except:
-                    raise ValueError
+        else:
+            try:
+                self.width = kwargs.get("width")
+                self.height = kwargs.get("height")
+            except:
+                raise ValueError
         
         if self.width != self.height:
                 raise ValueError
