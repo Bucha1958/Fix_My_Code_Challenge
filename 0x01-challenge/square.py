@@ -19,7 +19,8 @@ class Square():
                     self.height = kwargs.get("height")
                 except:
                     raise ValueError
-            if self.width != self.height:
+        
+        if self.width != self.height:
                 raise ValueError
 
     def area_of_my_square(self):
@@ -36,7 +37,7 @@ class Square():
 
 if __name__ == "__main__":
 
-    s = square(width=12, height=12)
+    s = Square(width=12, height=12)
     print(s)
     print("Area:", s.area_of_my_square())
     print("Perimeter:", s.perimeter_of_my_square())
