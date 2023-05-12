@@ -13,19 +13,19 @@ class Square():
     def __init__(self, *args, **kwargs):
         if args:
             if len(args) > 2:
-                raise TypeError(f"Square() takes at most 2 positional arguments ({len(args)} given)")
+                raise TypeError
             try:
                 self.width, self.height = args
             except (ValueError, TypeError):
-                raise ValueError("Invalid arguments: two positive integers are expected")
+                raise ValueError
         else:
             try:
                 self.width = kwargs.get("width")
                 self.height = kwargs.get("height")
             except (ValueError, TypeError):
-                raise ValueError("Invalid arguments: two positive integers of the same value are expected")
+                raise ValueError
         if self.width != self.height:
-            raise ValueError("Invalid arguments: two positive integers are expected")
+            raise ValueError
 
     def area_of_my_square(self):
         """ Area of the square """
